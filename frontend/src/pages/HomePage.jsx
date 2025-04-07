@@ -1,27 +1,34 @@
 import axios from "axios";
-import { useStae, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useGlobalContext } from "../contexts/GlobalContext";
+import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
+import Card from "../components/Card";
 
 export default function HomePage() {
 
-    // const apiURL = import.meta.env.VITE_API_URL;
-    // const endpoint = "posts";
+    // Dichiarazione variabili
 
-    // useEffect(() => { fetchPosts(), [] });
+    const { projects, fetchProjects, isLoading } = useGlobalContext();
 
-    // const fetchPosts = () => {
-    //     axios.get(apiURL + endpoint).then((res) => {
-    //         console.log(res.data);
-    //     }).catch((err) => {
+    // Dichiarazione funzioni
 
-    //         console.log(err);
+    useEffect(() => { fetchProjects() }, []);
 
-    //     }).finally(() => {
-    //         console.log("Chiamata effettuata");
-    //     });
-    // };
     return (
-        <div>
-            <h1>HomePage</h1>
-        </div>
+        <section id="projects" className="py-5 bg-light">
+            {isLoading && <Loader />}
+            <div className="container">
+                <h2 className="text-center mb-4">I Miei Progetti</h2>
+                <div className="row">
+                    {projects?.map((project) => {
+                        return (
+                            <Card data={project} key={project.id} />
+                        )
+                    })}
+                </div>
+            </div>
+        </section>
+
     )
 }

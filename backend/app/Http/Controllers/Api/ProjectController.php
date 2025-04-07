@@ -22,6 +22,8 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
 
+        $project->load("technologies");
+
         return response()->json([
             "success" => true,
             "data" => $project

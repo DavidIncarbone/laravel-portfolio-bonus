@@ -1,0 +1,47 @@
+/* Dettaglio progetto */
+#projectImages .carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Sezione descrizione del progetto */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h3,
+h4 {
+    font-size: 1.75rem;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* ul li::before {
+    content: "\2022";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+} */
+
+/* Card contatti */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
