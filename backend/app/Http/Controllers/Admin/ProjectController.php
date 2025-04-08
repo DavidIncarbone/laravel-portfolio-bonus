@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
 use App\Models\Technology;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -43,11 +44,12 @@ class ProjectController extends Controller
         $newProject->summary = $data["summary"];
         $newProject->link = $data["link"];
 
-        dd($data);
+        if (array_key_exists("image", $data)) {
+            $image_url = Storage::putFile("projects", $data["image"]);
+            $newProject->image = $image_url;
+        }
 
         $newProject->save();
-
-
 
         if ($request->has("technologies")) {
             $newProject->technologies()->attach($data["technologies"]);
