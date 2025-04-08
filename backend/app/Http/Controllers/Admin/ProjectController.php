@@ -88,6 +88,25 @@ class ProjectController extends Controller
         $project->summary = $data["summary"];
         $project->link = $data["link"];
 
+        // dd($data);
+
+        if (array_key_exists("image", $data)) {
+
+            if ($project->image) {
+
+                Storage::delete($project->image);
+                $img_url = Storage::putFile("projects", $data["image"]);
+                $project->image = $img_url;
+            } else {
+                $img_url = Storage::putFile("projects", $data["image"]);
+                $project->image = $img_url;
+            }
+        } else {
+
+            Storage::delete($project->image);
+            $project->image = null;
+        }
+
         $project->update();
 
         if ($request->has("technologies")) {
