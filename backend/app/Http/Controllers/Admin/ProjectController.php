@@ -43,6 +43,8 @@ class ProjectController extends Controller
         $newProject->summary = $data["summary"];
         $newProject->link = $data["link"];
 
+        dd($data);
+
         $newProject->save();
 
 

@@ -1,5 +1,5 @@
 
-<form action="{{$route}}" method="POST">
+<form action="{{$route}}" method="POST" enctype="multipart/form-data">
 
     @csrf
     {{$method}}
@@ -28,6 +28,11 @@
     <div class="form-control mb-3 d-flex flex-column">
         <label for="summary">Descrizione del progetto</label>
         <textarea  name="summary" id="summary" width="100%" rows="5">{{$summary}}</textarea>
+     </div>
+
+     <div class="form-control mb-3 d-flex flex-column">
+        <label for="image">Immagine del progetto</label>
+        <input type="file" id="image" name="image">
      </div>
   
      <div class="form-control mb-3 d-flex flex-column">
