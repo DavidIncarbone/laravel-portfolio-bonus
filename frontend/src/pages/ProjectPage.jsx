@@ -9,7 +9,7 @@ export default function ProjectPage() {
 
     // Dichiaro le variabili
 
-    const { project, fetchProject, isLoading } = useGlobalContext();
+    const { project, fetchProject, isLoading, fileUrl } = useGlobalContext();
     const { id } = useParams();
     console.log(id);
 
@@ -28,7 +28,7 @@ export default function ProjectPage() {
                             <div id="projectImages" className={`carousel slide ${styles.carousel}`} data-bs-ride="carousel">
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
-                                        <img src="progetto1-dettaglio.jpg" className="d-block w-100" alt={project.name} />
+                                        <img src={`${fileUrl}${project.image}`} className="d-block w-100" alt={project.name} />
                                     </div>
                                 </div>
                                 <button className="carousel-control-prev" type="button" data-bs-target="#projectImages" data-bs-slide="prev">
@@ -54,7 +54,7 @@ export default function ProjectPage() {
 
                             </ul>
 
-                            <a href={project.link} className={`btn btn-primary mt-4 ${styles.projectButton}`}>Visita il Progetto</a>
+                            <a href={project.link} className={`btn btn-dark mt-4 ${styles.projectButton}`}>Visita il Progetto</a>
                         </div>
 
 
