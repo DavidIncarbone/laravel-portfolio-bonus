@@ -29,13 +29,15 @@
                         </div>
                         </div>
                         <p><strong>Tipo:</strong> {{$project->type->name}}</p>
-                       
+
+                        <div class="mb-3">
+                    
                         @foreach ($project->technologies as $technology)
                         
-                       <span class="badge" style="background-color: {{$technology->color}}">{{$technology->name}}</span> 
+                       <a href="{{route("technologies.show", $technology)}}" class="badge text-decoration-none" style="background-color: {{$technology->color}}">{{$technology->name}}</a> 
 
                         @endforeach
-                       
+                       </div>
                         <p><strong>Cliente:</strong> {{$project->customer}}</p>
                         <p><strong>Periodo di Realizzazione:</strong> {{$project->period}}</p>
                         <p><strong>Descrizione:</strong>{{$project->summary}} </p>

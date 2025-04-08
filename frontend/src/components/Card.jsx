@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 
-export default function Card({ data }) {
+export default function Card({ data, fileUrl }) {
     return (
-        <div className="col-md-4 mb-4 overflow-y-hidden" >
-            <div className="card shadow " style={{ height: "300px" }} >
-                <img src="progetto1.jpg" className="card-img-top" alt={data.name} />
-                <div className="card-body">
+        <div className="col-md-4 mb-4">
+            <div className="card shadow" style={{ height: "50vh" }} >
+                <div className="h-50 debug">
+                    <img src={`${fileUrl}${data.image}`} className="card-img-top overflow-y-hidden" alt={data.name} />
+                </div>
+                <div className="card-body mt-3">
                     <h5 className="card-title">{data.name}</h5>
-                    <p className="card-text overflow-y-auto" style={{ height: "100px" }}>{data.summary.length <= 200 ? data.summary : data.summary.substring(0, 200) + "..."}</p>
-                    <Link className="btn btn-primary mb-0" to={`/project/${data.id}`}>Dettagli</Link>
+                    <p className="card-text">{data.summary.length <= 100 ? data.summary : data.summary.substring(0, 100) + "..."}</p>
+                    <Link className="btn btn-dark mb-0" to={`/project/${data.id}`}>Dettagli</Link>
                 </div>
             </div>
         </div>

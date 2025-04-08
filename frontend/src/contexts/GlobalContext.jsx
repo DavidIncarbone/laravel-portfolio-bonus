@@ -1,6 +1,5 @@
 // Creazione della GlobalContext che conterrà tutte le chiamate API al server
 import { createContext, useContext, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 //crea il Context e gli do il nome GlobalContext
@@ -14,6 +13,7 @@ const GlobalProvider = ({ children }) => {
     // Variables
 
     const apiUrl = import.meta.env.VITE_API_URL;
+    const fileUrl = import.meta.env.VITE_BACKEND_FILE_URL;
 
     // project
 
@@ -56,6 +56,7 @@ const GlobalProvider = ({ children }) => {
         fetchProjects,
         fetchProject,
         isLoading,
+        fileUrl
 
     }
 

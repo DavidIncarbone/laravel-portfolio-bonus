@@ -9,7 +9,7 @@ export default function HomePage() {
 
     // Dichiarazione variabili
 
-    const { projects, fetchProjects, isLoading } = useGlobalContext();
+    const { projects, fetchProjects, isLoading, fileUrl } = useGlobalContext();
 
     // Dichiarazione funzioni
 
@@ -17,16 +17,17 @@ export default function HomePage() {
 
     return (
         <section id="projects" className="py-5 bg-light">
-            {isLoading && <Loader />}
             <div className="container">
                 <h2 className="text-center mb-4">I Miei Progetti</h2>
-                <div className="row">
-                    {projects?.map((project) => {
-                        return (
-                            <Card data={project} key={project.id} />
-                        )
-                    })}
-                </div>
+                {isLoading ? <Loader /> :
+                    <div className="row">
+                        {projects?.map((project) => {
+                            return (
+                                <Card data={project} fileUrl={fileUrl} key={project.id} />
+                            )
+                        })}
+                    </div>
+                }
             </div>
         </section>
 

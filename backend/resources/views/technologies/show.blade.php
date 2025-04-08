@@ -2,6 +2,7 @@
 
 @section("content")
 
+
 <a href="{{route("technologies.index")}}" class="btn btn-primary my-3">< Torna alle tecnologie</a>
 
   <div class="section-header">
