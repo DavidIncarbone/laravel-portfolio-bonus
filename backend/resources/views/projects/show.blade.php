@@ -13,8 +13,8 @@
             <section id="project-details" class="my-5">
                 <div class="row">
                     <!-- Project Image -->
-                    <div class="col-md-6">
-                        <img src="{{ Vite::asset('resources/img/' . $project->name . '.png')}}" alt="{{$project->name}}" class="img-fluid rounded shadow-lg">
+                    <div class="col-md-6 " style=" height:50vh">
+                        <img src="{{ asset('storage/' . $project->image)}}" alt="{{$project->name}}" class="rounded shadow-lg show-card-container">
                     </div>
                     
                     <!-- Project Information -->
