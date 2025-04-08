@@ -30,6 +30,7 @@ class ProjectsSeeder extends Seeder
         FrontEnd: HTML,CSS e React.js
         BackEnd: Node.js + Express.js
         Database relazionale MySQL ";
+        $boolBNB->image = "projects/Bool-B&B.png";
         $boolBNB->link = "https://bool-bnb-custom.netlify.app/";
 
         $boolBNB->save();
@@ -42,6 +43,7 @@ class ProjectsSeeder extends Seeder
         $boolflix->period = "Gennaio 2024";
         $boolflix->summary = "Riproduzione della homepage di Netflix usando l'API di terze parti TMDB
         Tecnologie usate: HTML, CSS, React.js ";
+        $boolflix->image = "projects/Boolflix.png";
         $boolflix->link = "https://boolflixdi.netlify.app/";
 
         $boolflix->save();
