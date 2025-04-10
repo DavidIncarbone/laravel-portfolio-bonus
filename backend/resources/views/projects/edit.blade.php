@@ -4,7 +4,7 @@
 
 <x-form>
     
-<x-slot:route>{{route("projects.update", $project )}}</x-slot>
+<x-slot:route>{{route("admin.projects.update", $project )}}</x-slot>
 <x-slot:method>@method("PUT")</x-slot>
 <x-slot:name>{{$project->name}}</x-slot>
 <x-slot:type>

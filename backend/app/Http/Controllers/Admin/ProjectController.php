@@ -54,7 +54,7 @@ class ProjectController extends Controller
         if ($request->has("technologies")) {
             $newProject->technologies()->attach($data["technologies"]);
         }
-        return redirect()->route("projects.show", $newProject);
+        return redirect()->route("admin.projects.show", $newProject);
     }
 
     /**
@@ -115,7 +115,7 @@ class ProjectController extends Controller
             $project->technologies()->detach();
         }
 
-        return redirect()->route("projects.show", $project);
+        return redirect()->route("admin.projects.show", $project);
     }
 
     /**
@@ -125,6 +125,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route("projects.index");
+        return redirect()->route("admin.projects.index");
     }
 }

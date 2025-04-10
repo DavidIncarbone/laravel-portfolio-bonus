@@ -30,20 +30,12 @@ class TypeController extends Controller
      */
     public function store(Request $request, Type $type)
     {
-
-
         $data = $request->all();
-
-
-
         $newType = new Type;
-
         $newType->name = $data["name"];
         $newType->description = $data["description"];
-        $newType->color = $data["color"];
         $newType->save();
-
-        return redirect()->route("types.show", $newType);
+        return redirect()->route("admin.types.show", $newType);
     }
 
     /**
@@ -76,7 +68,7 @@ class TypeController extends Controller
 
         $type->update();
 
-        return redirect()->route("types.index");
+        return redirect()->route("admin.types.index");
     }
 
     /**
@@ -86,6 +78,6 @@ class TypeController extends Controller
     {
         $type->delete();
 
-        return redirect()->route("types.index");
+        return redirect()->route("admin.types.index");
     }
 }

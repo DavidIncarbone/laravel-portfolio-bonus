@@ -2,12 +2,12 @@
 
 @section("content")
 
-<div><a href="{{route("technologies.index")}}" class="btn btn-primary my-3">< Torna alle tecnologie</a></div>
+<div><a href="{{route("admin.technologies.index")}}" class="btn btn-primary my-3">< Torna alle tecnologie</a></div>
 
 
 <h1 class="text-center py-5">Aggiungi tecnologia</h1>
 
-<form action="{{route("technologies.store")}}" method="POST">
+<form action="{{route("admin.technologies.store")}}" method="POST">
 
 @csrf
 

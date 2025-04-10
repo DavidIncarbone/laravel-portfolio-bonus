@@ -2,11 +2,11 @@
 
 @section("content")
 
-<a href="{{route("types.index")}}" class="btn btn-primary my-3">< Torna alle tipologie</a>
+<a href="{{route("admin.types.index")}}" class="btn btn-primary my-3">< Torna alle tipologie</a>
 
 <h1 class="text-center py-5">Modifica tipologia {{$type->name}}</h1>
 
-<form action="{{route("types.update", $type)}}" method="POST">
+<form action="{{route("admin.types.update", $type)}}" method="POST">
 
 @csrf
 

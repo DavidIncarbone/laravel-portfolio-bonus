@@ -9,9 +9,8 @@
             </header>
 
             <div class="d-flex gap-3 py-4">
-    <a class="btn btn-primary" href="{{ route("projects.create") }}">Aggiungi un nuovo progetto</a>
-    <a class="btn btn-warning" href="{{ route("types.index") }}">Gestisci le tipologie</a>
-    <a class="btn btn-warning" href="{{ route("technologies.index") }}">Gestisci le tecnologie</a>
+    <a class="btn btn-primary" href="{{ route("admin.projects.create") }}">Aggiungi un nuovo progetto</a>
+    
     
          
              </div>
@@ -44,8 +43,8 @@
                             @endphp
                             <td>{{$shortenedDescription}}...</td>
                             <td class="d-flex gap-3">
-                                <a id="project-details-btn" href="{{route("projects.show", $project)}}" class="btn btn-info">Dettagli</a>
-                                <a class="btn btn-warning" href="{{ route("projects.edit", $project) }}">Modifica</a>
+                                <a id="project-details-btn" href="{{route("admin.projects.show", $project)}}" class="btn btn-info">Dettagli</a>
+                                <a class="btn btn-warning" href="{{ route("admin.projects.edit", $project) }}">Modifica</a>
                                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                       Elimina
                                     </button>  

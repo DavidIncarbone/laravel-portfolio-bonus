@@ -32,18 +32,14 @@ class TechnologyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
-
-
         $newTechnology = new Technology;
-
         $newTechnology->name = $data["name"];
         $newTechnology->description = $data["description"];
         $newTechnology->color = $data["color"];
 
         $newTechnology->save();
 
-        return redirect()->route("technologies.show", $newTechnology);
+        return redirect()->route("admin.technologies.show", $newTechnology);
     }
 
     /**
@@ -75,7 +71,7 @@ class TechnologyController extends Controller
 
         $technology->update();
 
-        return redirect()->route("technologies.index");
+        return redirect()->route("admin.technologies.index");
     }
 
     /**
@@ -85,6 +81,6 @@ class TechnologyController extends Controller
     {
         $technology->delete();
 
-        return redirect()->route("technologies.index");
+        return redirect()->route("admin.technologies.index");
     }
 }

@@ -22,7 +22,7 @@
                         <div class="d-flex justify-content-between">
                         <h2>{{$project->name}}</h2>
                           <div> 
-                            <a class="btn btn-warning" href="{{ route("projects.edit", $project) }}">Modifica</a>  
+                            <a class="btn btn-warning" href="{{ route("admin.projects.edit", $project) }}">Modifica</a>  
                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                  Elimina
                                </button>
@@ -34,7 +34,7 @@
                     
                         @foreach ($project->technologies as $technology)
                         
-                       <a href="{{route("technologies.show", $technology)}}" class="badge text-decoration-none" style="background-color: {{$technology->color}}">{{$technology->name}}</a> 
+                       <a href="{{route("admin.technologies.show", $technology)}}" class="badge text-decoration-none" style="background-color: {{$technology->color}}">{{$technology->name}}</a> 
 
                         @endforeach
                        </div>
