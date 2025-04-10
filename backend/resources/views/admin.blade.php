@@ -17,15 +17,7 @@
         <div class="flex-grow-1 p-4">
             <div class="header d-flex justify-content-between align-items-center mb-4">
                 <h1>Benvenuto nella tua Dashboard</h1>
-                 <button class="btn btn-dark">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form></button>
+              
             </div>
 
             <div class="row">

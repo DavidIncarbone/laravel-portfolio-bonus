@@ -1,60 +1,60 @@
-@extends("layouts.master")
+@extends('layouts.master')
 
-@section("content")
+@section('content')
+    <section id="projects" class="my-5">
 
-<section id="projects" class="my-5">
+        <h1 class="text-center p-3">Lista delle tecnologie</h1>
 
-    <h1 class="text-center p-3">Lista delle tecnologie</h1>
+        <a class="btn btn-primary" href="{{ route('admin.technologies.create') }}">Aggiungi tecnologia</a>
 
-    <a class="btn btn-primary" href="{{ route("admin.technologies.create") }}">Aggiungi tecnologia</a>
+        <table class="table table-bordered table-striped my-3">
+            <thead>
+                <tr class="text-center">
+                    <th>Tecnologia</th>
+                    <th>Descrizione</th>
+                    <th>Opzioni</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                <table class="table table-bordered table-striped my-3">
-                    <thead>
-                        <tr class="text-center">
-                            <th>Tecnologia</th>
-                            <th>Descrizione</th>
-                            <th>Opzioni</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                @foreach ($technologies as $technology)
+                    <tr>
+                        <td>{{ $technology->name }}</td>
+                        @php
+                            $maxWords = 15;
+                            $words = explode(' ', $technology->description);
+                            $shortenedDescription = implode(' ', array_slice($words, 0, $maxWords));
+                        @endphp
+                        <td>{{ $shortenedDescription }}...</td>
+                        <td class="d-flex justify-content-center gap-3">
+                            <a id="technology-details-btn" href="{{ route('admin.technologies.show', $technology) }}"
+                                class="btn btn-info">Dettagli</a>
+                            <a class="btn btn-warning"
+                                href="{{ route('admin.technologies.edit', $technology) }}">Modifica</a>
+                            <button technology="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Elimina
+                            </button>
 
-                        @foreach($technologies as $technology)
-                        <tr>
-                            <td>{{$technology->name}}</td>
-                            @php
-                                 $maxWords = 15; 
-                                $words = explode(' ', $technology->description);
-                                 $shortenedDescription = implode(' ', array_slice($words, 0, $maxWords)); 
-                            @endphp
-                            <td>{{$shortenedDescription}}...</td>
-                            <td class="d-flex justify-content-center gap-3">
-                                <a id="technology-details-btn" href="{{route("admin.technologies.show", $technology)}}" class="btn btn-info">Dettagli</a>
-                                <a class="btn btn-warning" href="{{ route("admin.technologies.edit", $technology) }}">Modifica</a>
-                                 <button technology="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                      Elimina
-                                    </button>  
-                                
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
+                @endforeach
 
-                        @endforeach
-                       
-                    </tbody>
-                </table>
-            </section>
+            </tbody>
+        </table>
+    </section>
 
-             <x-modal>
-                <x-slot:deleteBtn>
-                     <form action="{{route("admin.technologies.destroy", $technology)}}" method="POST">
-                           @csrf
-                           @method("DELETE")
-                          <input type="submit" value="Elimina definitivamente" class="btn btn-danger">
-                      </form>
-                    
-            </x-slot>
-            <x-slot:delete>Elimina la tecnologia </x-slot>
-            <x-slot:wantDelete>Vuoi eliminare la tecnologia?</x-slot>
-               
-             </x-modal>
+    <x-modal>
+        <x-slot:deleteBtn>
+            <form action="{{ route('admin.technologies.destroy', $technology) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Elimina definitivamente" class="btn btn-danger">
+            </form>
 
+        </x-slot>
+        <x-slot:delete>Elimina la tecnologia </x-slot>
+        <x-slot:wantDelete>Vuoi eliminare la tecnologia?</x-slot>
+
+    </x-modal>
 @endsection

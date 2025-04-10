@@ -1,30 +1,30 @@
-@extends("layouts.master")
+@extends('layouts.master')
 
-@section("content")
+@section('content')
+    <div><a href="{{ route('admin.technologies.index') }}" class="btn btn-primary my-3">
+            < Torna alle tecnologie</a>
+    </div>
 
-<div><a href="{{route("admin.technologies.index")}}" class="btn btn-primary my-3">< Torna alle tecnologie</a></div>
 
+    <h1 class="text-center py-5">Aggiungi tecnologia</h1>
 
-<h1 class="text-center py-5">Aggiungi tecnologia</h1>
+    <form action="{{ route('admin.technologies.store') }}" method="POST">
 
-<form action="{{route("admin.technologies.store")}}" method="POST">
+        @csrf
 
-@csrf
+        <div class="form-control d-flex flex-column gap-2 pb-3 mb-3">
+            <label for="name">Inserisci il nome della tecnologia</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="form-control d-flex flex-column gap-2 pb-3 mb-3">
+            <label for="description">Inserisci una descrizione</label>
+            <textarea type="text" name="description" id="description" rows="5"></textarea>
+        </div>
+        <div class="form-control d-flex flex-column gap-2 pb-3 mb-3" style="width: 250px">
+            <label for="color">Scegli il colore del badge</label>
+            <input class="w-75" type="color" name="color" id="color">
+        </div>
 
-<div class="form-control d-flex flex-column gap-2 pb-3 mb-3">
-<label for="name">Inserisci il nome della tecnologia</label>
-<input type="text" name="name" id="name">
-</div>
-<div class="form-control d-flex flex-column gap-2 pb-3 mb-3">
-<label for="description">Inserisci una descrizione</label>
-<textarea type="text" name="description" id="description" rows="5"></textarea>
-</div>
-<div class="form-control d-flex flex-column gap-2 pb-3 mb-3" style="width: 250px">
-<label for="color">Scegli il colore del badge</label>
-<input class="w-75" type="color" name="color" id="color">
-</div>
-
-<input type="submit" value="Aggiungi" class="btn btn-success">
-</form>
-
+        <input type="submit" value="Aggiungi" class="btn btn-success">
+    </form>
 @endsection
