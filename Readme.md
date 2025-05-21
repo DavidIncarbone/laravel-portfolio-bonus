@@ -1,6 +1,6 @@
 <h1>OVERVIEW</h1>
 
-<!-- IMMAGINE QUI -->
+<img src="https://github.com/user-attachments/assets/e3bf9dbf-1727-41c9-adac-8e3af5318e58" alt="Demo" width="600" />
 
 <p>Realizzazione <b>portfolio</b> semplice ed intuitivo, backend in <b>Laravel</b> e frontend in <b>React.js</b></br>
 L'app si presenta con una <b>Homepage</b> che mostra la <b>lista dei miei progetti</b>, ordinati dal più recente, ed una <b>pagina di dettaglio</b> correlata per progetto</p>
