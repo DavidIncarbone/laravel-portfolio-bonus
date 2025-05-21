@@ -1,16 +1,28 @@
-EX - Esposizione API
-Descrizione
-Nome repo: laravel-portfolio
-Come ultimo tassello, possiamo provare ad esporre delle API che ci permettano di inviare all'esterno i dati relativi ai nostri progetti!
-Svolgimento
-In questo esercizio dovremo preparare delle API a cui un'app esterna possa agganciarsi per ricevere informazioni sui nostri progetti.
-Innanzitutto, pubblichiamo il file routes/api.php col comando php artisan route:publish api
-Creiamo poi un controller dedicato alle API dei progetti, col comando php artisan make:controller Api/ProjectController e inseriamo all'interno i metodi per restituire l'elenco dei progetti ed un singolo progetto, in formato JSON
-Testiamo su Postman le nostre due rotte per verificare che restituiscano correttamente i JSON che abbiamo predisposto
-Predisponiamo le configurazioni CORS di Laravel nel file cors.php per autorizzare l'applicazione esterna ad effettuare delle chiamate al nostro backend. 
-Bonus
-Nome repo: laravel-portfolio-bonus
-Prepariamo (in un repo a parte) una piccola applicazione frontend con React, che  permetta ad un utente non loggato di vedere la lista dei nostri progetti in Home e di poter poi andare a visualizzare il singolo progetto in una pagina di dettaglio, sfruttando le  API prodotte in Laravel!
+<h1>OVERVIEW</h1>
 
-Non dimentichiamo di predisporre le configurazioni CORS di Laravel nel file cors.php per autorizzare l'applicazione esterna ad effettuare delle chiamate al nostro backend!
-Nota: per questo esercizio non è previsto un video di correzione giacché le funzionalità richieste sono uguali a quelle mostrate nel modulo. Pertanto le lezioni stesse fungono da guida per la correzione
+<!-- IMMAGINE QUI -->
+
+<p>Realizzazione <b>portfolio</b> semplice ed intuitivo, backend in <b>Laravel</b> e frontend in <b>React.js</b></br>
+L'app si presenta con una <b>Homepage</b> che mostra la <b>lista dei miei progetti</b>, ordinati dal più recente, ed una <b>pagina di dettaglio</b> correlata per progetto</p>
+
+<h2>TECNOLOGIE UTILIZZATE</h2>
+
+<ul>
+<li>
+Database relazionale MySQL
+</li>
+<li>
+PHP/Laravel per il Back office con autenticazione gestita da Laravel Breeze
+</li>
+<li>
+HTML, CSS + Bootstrap, React.js per la Landing Page
+</li>
+</ul>
+
+<h1>TASK</h1>
+
+Nome repo: laravel-portfolio-bonus</br>
+Prepariamo (in un repo a parte) una piccola applicazione frontend con React, che permetta ad un utente non loggato di vedere la lista dei nostri progetti in Home e di poter poi andare a visualizzare il singolo progetto in una pagina di dettaglio, sfruttando le API prodotte in Laravel!</br>
+
+Non dimentichiamo di predisporre le configurazioni CORS di Laravel nel file cors.php per autorizzare l'applicazione esterna ad effettuare delle chiamate al nostro backend!</br>
+Nota: per questo esercizio non è previsto un video di correzione giacché le funzionalità richieste sono uguali a quelle mostrate nel modulo.</br> Pertanto le lezioni stesse fungono da guida per la correzione.

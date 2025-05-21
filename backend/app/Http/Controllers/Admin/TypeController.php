@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Type;
+use App\Models\type;
 
-class TypeController extends Controller
+class typeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $types = Type::all();
+        $types = type::all();
         return view("types/index", compact("types"));
     }
 
@@ -28,20 +28,20 @@ class TypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Type $type)
+    public function store(Request $request, type $type)
     {
         $data = $request->all();
-        $newType = new Type;
-        $newType->name = $data["name"];
-        $newType->description = $data["description"];
-        $newType->save();
-        return redirect()->route("admin.types.show", $newType);
+        $newtype = new type;
+        $newtype->name = $data["name"];
+        $newtype->description = $data["description"];
+        $newtype->save();
+        return redirect()->route("admin.types.show", $newtype);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Type $type)
+    public function show(type $type)
     {
         return view("types.show", compact("type"));
     }
@@ -49,9 +49,9 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Type $type)
+    public function edit(type $type)
     {
-        $types = Type::all();
+        $types = type::all();
 
         return view("types.edit", compact("type", "types"));
     }
@@ -59,7 +59,7 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, type $type)
     {
         $data = $request->all();
 
@@ -74,7 +74,7 @@ class TypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Type $type)
+    public function destroy(type $type)
     {
         $type->delete();
 

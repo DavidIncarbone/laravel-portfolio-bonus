@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\TypeController;
-use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Admin\typeController;
+use App\Http\Controllers\Admin\technologyController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,8 +20,8 @@ Route::middleware(["auth", "verified"])
         })->name("home");
         Route::resource("profile", ProfileController::class);
         Route::resource("projects", ProjectController::class);
-        Route::resource("types", TypeController::class);
-        Route::resource("technologies", TechnologyController::class);
+        Route::resource("types", typeController::class);
+        Route::resource("technologies", technologyController::class);
     });
 
 

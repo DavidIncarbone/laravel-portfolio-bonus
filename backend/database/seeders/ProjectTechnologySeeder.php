@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\type\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
-use App\Models\Technology;
+use App\Models\technology;
 
-class ProjectTechnologySeeder extends Seeder
+class ProjecttechnologySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,12 @@ class ProjectTechnologySeeder extends Seeder
     {
 
         $boolBNB = Project::find(1);
-        $technologies = Technology::all();
+        $technologies = technology::all();
 
         $boolBNB->technologies()->attach($technologies->pluck("id")->toArray());
 
         $boolflix = Project::find(2);
-        $bfTechnologies = Technology::whereIn("id", [1, 2, 3, 4])->get();
+        $bfTechnologies = technology::whereIn("id", [1, 2, 3, 4])->get();
 
         $boolflix->technologies()->attach($bfTechnologies->pluck("id")->toArray());
     }

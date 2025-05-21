@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Technology extends Model
+class technology extends Model
 {
     public function projects()
     {

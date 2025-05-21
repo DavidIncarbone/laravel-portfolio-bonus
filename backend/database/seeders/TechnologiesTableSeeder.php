@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\type\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Technology;
+use App\Models\technology;
 
 use Faker\Generator as Faker;
 
@@ -34,13 +34,13 @@ class TechnologiesTableSeeder extends Seeder
 
         for ($i = 0; $i < count($technologies); $i++) {
 
-            $newTechnology = new Technology;
+            $newtechnology = new technology;
 
-            $newTechnology->name = $technologies[$i];
-            $newTechnology->description = $descriptiones[$i];
-            $newTechnology->color = $faker->hexColor();
+            $newtechnology->name = $technologies[$i];
+            $newtechnology->description = $descriptiones[$i];
+            $newtechnology->color = $faker->hexColor();
 
-            $newTechnology->save();
+            $newtechnology->save();
         }
     }
 }

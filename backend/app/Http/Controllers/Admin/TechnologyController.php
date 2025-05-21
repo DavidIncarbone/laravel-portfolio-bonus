@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Technology;
+use App\Models\technology;
 
-class TechnologyController extends Controller
+class technologyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $technologies = Technology::all();
+        $technologies = technology::all();
 
         return view("technologies/index", compact("technologies"));
     }
@@ -32,20 +32,20 @@ class TechnologyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $newTechnology = new Technology;
-        $newTechnology->name = $data["name"];
-        $newTechnology->description = $data["description"];
-        $newTechnology->color = $data["color"];
+        $newtechnology = new technology;
+        $newtechnology->name = $data["name"];
+        $newtechnology->description = $data["description"];
+        $newtechnology->color = $data["color"];
 
-        $newTechnology->save();
+        $newtechnology->save();
 
-        return redirect()->route("admin.technologies.show", $newTechnology);
+        return redirect()->route("admin.technologies.show", $newtechnology);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Technology $technology)
+    public function show(technology $technology)
     {
         return view("technologies.show", compact("technology"));
     }
@@ -53,7 +53,7 @@ class TechnologyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Technology $technology)
+    public function edit(technology $technology)
     {
         return view("technologies.edit", compact("technology"));
     }
@@ -61,7 +61,7 @@ class TechnologyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Technology $technology)
+    public function update(Request $request, technology $technology)
     {
         $data = $request->all();
 
@@ -77,7 +77,7 @@ class TechnologyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Technology $technology)
+    public function destroy(technology $technology)
     {
         $technology->delete();
 

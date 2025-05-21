@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\type\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\models\Type;
+use App\models\type;
 use PHPUnit\TextUI\Configuration\Php;
 
-class TypesSeeder extends Seeder
+class typesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,10 +19,10 @@ class TypesSeeder extends Seeder
 
         foreach ($types as $type) {
 
-            $newType = new Type;
+            $newtype = new type;
 
-            $newType->name = $type;
-            $newType->save();
+            $newtype->name = $type;
+            $newtype->save();
         }
     }
 }
